@@ -12,6 +12,11 @@ Requirements
 -	[Oracle Compute Cloud](https://cloud.oracle.com/compute) Account
 -	[Go](https://golang.org/doc/install) 1.7 or above (to build the provider plugin)
 
+OPC Provider Plugin
+-------------------
+
+A provider in Terraform is responsible for the lifecycle of a resource: create, read, update, delete. Terraform providers are provided via plugins. Plugins are executed as a separate process and communicate with the main Terraform binary over an RPC interface.
+
 Building
 --------
 
@@ -32,7 +37,7 @@ $ go build -o terraform-provider-opc github.com/oracle/terraform-provider-comput
 Usage
 -----
 
-Add the generated `terraform-provider-opc` executable to your `.terraformrc` configuration (`%APPDATA%/terraform.rc` on Windows), e.g.
+Add the generated `terraform-provider-opc` executable to your terraform configuration file. The configuration where plugins are defined is `~/.terraformrc` for Unix-like systems and `%APPDATA%/terraform.rc` for Windows, e.g.
 
 ```
 providers {
