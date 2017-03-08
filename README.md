@@ -94,17 +94,17 @@ The following build issue can occur if you have an older version of the terrafor
 ```
 Error configuring: 1 error(s) occurred:
 
-* Incompatible API version with plugin. Plugin version: 3, Ours: 2
+* Incompatible API version with plugin. Plugin version: 4, Ours: 2
 ```
 
-To build the provider plugin against a specific terraform version, checkout the version in the `$GOPATH/src/github.com/hashicorp/terraform` source directory and rebuild. Be sure the align the checkout tag with the version of terraform you have installed, e.g for `Terraform v0.8.5` you will need to `git checkout v0.8.5`
+To build the provider plugin against a specific terraform version, checkout the version in the `$GOPATH/src/github.com/hashicorp/terraform` source directory and rebuild. Be sure the align the checkout tag with the version of terraform you have installed, e.g for `Terraform v0.8.8` you will need to `git checkout v0.8.8`
 
 ```sh
 $ terraform --version
-Terraform v0.8.5
+Terraform v0.8.8
 
-$ ( cd $GOPATH/src/github.com/hashicorp/terraform && git checkout v0.8.5 )
-$ go build -o terraform-provider-opc github.com/oracle/terraform-provider-compute/provider
+$ ( cd $GOPATH/src/github.com/hashicorp/terraform && git checkout v0.8.8 )
+$ go build -o $GOPATH/terraform-provider-opc github.com/oracle/terraform-provider-compute/provider
 ```
 
 To revert back to building againt the latest source change the git checkout statement to `git checkout master`
