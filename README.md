@@ -99,6 +99,12 @@ Error configuring: 1 error(s) occurred:
 
 To build the provider plugin against a specific terraform version, checkout the version in the `$GOPATH/src/github.com/hashicorp/terraform` source directory and rebuild. Be sure the align the checkout tag with the version of terraform you have installed, e.g for `Terraform v0.8.8` you will need to `git checkout v0.8.8`
 
+In case you upgraded Terraform you need to fetch the git repository to update the local source, before the checkout:
+```sh 
+( cd $GOPATH/src/github.com/hashicorp/terraform && git fetch)
+```
+
+Checkout:
 ```sh
 $ terraform --version
 Terraform v0.8.8
